@@ -78,7 +78,7 @@ RUN apt-get update && apt-get install -y \
 # Copy & Install PIP requirements
 COPY --chown=odoo:odoo ./odoo/requirements.txt /tmp/requirements.txt
 
-RUN python3 -m pip install -r /tmp/requirements.txt  && \
+RUN python3 -m pip install -r /tmp/requirements.txt --break-system-packages && \
     rm /tmp/requirements.txt
 
 #--------------------------------------------#
